@@ -15,7 +15,7 @@ use yii\db\Exception;
 class ActionHandlers
 {
     /**
-     * Удаление отмеченных записей
+     * Deleting only selected records from DB
      * @param $model ActiveRecord
      * @param $ids array
      */
@@ -29,7 +29,7 @@ class ActionHandlers
     }
 
     /**
-     * Удаление всех записей
+     * Deleting all records from DB
      * @param $model ActiveRecord
      * @throws \Exception
      */

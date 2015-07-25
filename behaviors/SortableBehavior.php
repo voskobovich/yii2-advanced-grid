@@ -15,7 +15,6 @@ use yii\db\ActiveRecord;
 class SortableBehavior extends SortableGridBehavior
 {
     /**
-     * Перед сохранением записи в базу
      * @throws InvalidConfigException
      */
     public function beforeInsert()
