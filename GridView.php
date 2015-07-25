@@ -105,6 +105,12 @@ class GridView extends SortableGridView
     ';
 
     /**
+     * Action handler route
+     * @var string
+     */
+    public $handlerRoute = 'grid-handler';
+
+    /**
      * Инициализация
      * @throws \yii\base\InvalidConfigException
      */
@@ -276,7 +282,7 @@ class GridView extends SortableGridView
      */
     protected function registerCheckboxes()
     {
-        $this->layout = Html::beginForm(['grid-handler'], 'post') . $this->layout . Html::endForm();
+        $this->layout = Html::beginForm([$this->handlerRoute], 'post') . $this->layout . Html::endForm();
 
         $this->columns = ArrayHelper::merge([
             [
