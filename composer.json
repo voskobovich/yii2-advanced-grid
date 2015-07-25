@@ -5,7 +5,8 @@
     "admin",
     "grid",
     "yii2",
-    "advanced"
+    "advanced",
+    "draggable"
   ],
   "homepage": "https://github.com/voskobovich/yii2-advanced-grid",
   "type": "yii2-toolkit",
@@ -34,7 +35,8 @@
     "psr-4": {
       "voskobovich\\grid\\advanced\\": "",
       "voskobovich\\grid\\advanced\\actions\\": "actions",
-      "voskobovich\\grid\\advanced\\behaviors\\": "behaviors"
+      "voskobovich\\grid\\advanced\\behaviors\\": "behaviors",
+      "voskobovich\\grid\\advanced\\helpers\\": "helpers"
     }
   }
 }
