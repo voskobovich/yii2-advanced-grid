@@ -1,6 +1,6 @@
 <?php
 
-namespace voskobvich\grid\advanced\actions;
+namespace voskobovich\grid\advanced\actions;
 
 use Yii;
 use yii\base\Action;
@@ -9,7 +9,7 @@ use yii\base\InvalidConfigException;
 
 /**
  * Class ActionRouterAction
- * @package voskobvich\grid\advanced\actions
+ * @package voskobovich\grid\advanced\actions
  */
 class ActionRouterAction extends Action
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace voskobvich\grid\advanced;
+namespace voskobovich\grid\advanced;
 
 use yii\web\AssetBundle;
 
 /**
  * Class ShiftyAsset
- * @package voskobvich\grid\advanced
+ * @package voskobovich\grid\advanced
  */
 class ShiftyAsset extends AssetBundle
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace voskobvich\grid\advanced;
+namespace voskobovich\grid\advanced;
 
 use himiklab\sortablegrid\SortableGridAsset;
 use himiklab\sortablegrid\SortableGridView;
@@ -13,7 +13,7 @@ use yii\helpers\Html;
 
 /**
  * Class GridView
- * @package voskobvich\grid\advanced
+ * @package voskobovich\grid\advanced
  */
 class GridView extends SortableGridView
 {

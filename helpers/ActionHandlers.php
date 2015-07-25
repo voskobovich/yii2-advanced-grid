@@ -1,6 +1,6 @@
 <?php
 
-namespace voskobvich\grid\advanced\helpers;
+namespace voskobovich\grid\advanced\helpers;
 
 use voskobovich\alert\helpers\AlertHelper;
 use Yii;
@@ -10,7 +10,7 @@ use yii\db\Exception;
 
 /**
  * Class ActionHandlers
- * @package voskobvich\grid\advanced\helpers
+ * @package voskobovich\grid\advanced\helpers
  */
 class ActionHandlers
 {

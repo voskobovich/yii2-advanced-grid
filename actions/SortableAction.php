@@ -1,13 +1,13 @@
 <?php
 
-namespace voskobvich\grid\advanced\actions;
+namespace voskobovich\grid\advanced\actions;
 
 use himiklab\sortablegrid\SortableGridAction;
 
 
 /**
  * Class SortableAction
- * @package voskobvich\grid\advanced\actions
+ * @package voskobovich\grid\advanced\actions
  */
 class SortableAction extends SortableGridAction
 {

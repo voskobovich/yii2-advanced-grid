@@ -1,12 +1,12 @@
 <?php
 
-namespace voskobvich\grid\advanced;
+namespace voskobovich\grid\advanced;
 
 use yii\web\AssetBundle;
 
 /**
  * Class GridViewAsset
- * @package voskobvich\grid\advanced
+ * @package voskobovich\grid\advanced
  */
 class GridViewAsset extends AssetBundle
 {
