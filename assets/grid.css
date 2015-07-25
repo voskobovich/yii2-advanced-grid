@@ -1,0 +1,15 @@
+.grid-view .asc:after {
+    content: "\2191";
+    color: #fc9916;
+    font-weight: 300;
+    margin-left: .25rem;
+    font-size: 1rem;
+}
+
+.grid-view .desc:after {
+    content: "\2193";
+    color: #fc9916;
+    font-weight: 300;
+    margin-left: .25rem;
+    font-size: 1rem;
+}

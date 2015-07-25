@@ -1,0 +1,40 @@
+{
+  "name": "voskobovich/yii2-advanced-grid",
+  "description": "Advanced widget GridView for Yii2",
+  "keywords": [
+    "admin",
+    "grid",
+    "yii2",
+    "advanced"
+  ],
+  "homepage": "https://github.com/voskobovich/yii2-advanced-grid",
+  "type": "yii2-toolkit",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/voskobovich/yii2-advanced-grid/issues",
+    "source": "https://github.com/voskobovich/yii2-advanced-grid"
+  },
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Vitaly Voskobovich",
+      "email": "vitaly@voskobovich.com",
+      "homepage": "http://voskobovich.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": "*",
+    "voskobovich/yii2-alert": "*",
+    "himiklab/yii2-sortable-grid-view-widget": "*",
+    "justinvoelker/yii2-separatedpager": "*",
+    "nterms/yii2-pagesize-widget": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "voskobovich\\grid\\advanced\\": "",
+      "voskobovich\\grid\\advanced\\actions\\": "actions",
+      "voskobovich\\grid\\advanced\\behaviors\\": "behaviors"
+    }
+  }
+}
