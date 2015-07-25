@@ -1,4 +1,4 @@
-Yii2 Admin Setting Toolkit
+Yii2 Advanced Grid
 ================================
 
 Installation
@@ -9,13 +9,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-composer require --prefer-dist voskobovich/yii2-admin-setting-toolkit "*"
+composer require --prefer-dist voskobovich/yii2-advanced-grid "*"
 ```
 
 or add
 
 ```
-"voskobovich/yii2-admin-setting-toolkit": "*"
+"voskobovich/yii2-advanced-grid": "*"
 ```
 
 to the require section of your `composer.json` file.
