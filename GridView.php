@@ -276,7 +276,7 @@ class GridView extends SortableGridView
      */
     protected function registerCheckboxes()
     {
-        $this->layout = Html::beginForm('', 'post') . $this->layout . Html::endForm();
+        $this->layout = Html::beginForm(['grid-action-handler'], 'post') . $this->layout . Html::endForm();
 
         $this->columns = ArrayHelper::merge([
             [

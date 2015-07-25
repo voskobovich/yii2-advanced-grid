@@ -8,10 +8,10 @@ use yii\base\InvalidConfigException;
 
 
 /**
- * Class ActionRouterAction
+ * Class ActionHandlerAction
  * @package voskobovich\grid\advanced\actions
  */
-class ActionRouterAction extends Action
+class ActionHandlerAction extends Action
 {
     const WITH_SELECTED = 'selected';
     const WITH_ALL = 'all';
