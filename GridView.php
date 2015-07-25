@@ -5,6 +5,7 @@ namespace voskobovich\grid\advanced;
 use himiklab\sortablegrid\SortableGridAsset;
 use himiklab\sortablegrid\SortableGridView;
 use nterms\pagesize\PageSize;
+use voskobovich\grid\advanced\plugins\shifty\ShiftyAsset;
 use Yii;
 use yii\grid\CheckboxColumn;
 use yii\helpers\ArrayHelper;
