@@ -13,5 +13,18 @@ use yii\db\ActiveRecord;
  */
 class SortableBehavior extends SortableGridBehavior
 {
+    /**
+     * @throws InvalidConfigException
+     */
+    public function beforeInsert()
+    {
+        /** @var ActiveRecord $model */
+        $model = $this->owner;
+        if (!$model->hasAttribute($this->sortableAttribute)) {
+            throw new InvalidConfigException("Invalid sortable attribute `{$this->sortableAttribute}`.");
+        }
 
+        $maxOrder = $model->find()->max($this->sortableAttribute);
+        $model->{$this->sortableAttribute} = $maxOrder + 1;
+    }
 } 
