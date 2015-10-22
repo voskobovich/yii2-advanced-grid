@@ -37,6 +37,7 @@
       "voskobovich\\grid\\advanced\\actions\\": "actions",
       "voskobovich\\grid\\advanced\\behaviors\\": "behaviors",
       "voskobovich\\grid\\advanced\\helpers\\": "helpers",
+      "voskobovich\\grid\\advanced\\columns\\": "columns",
       "voskobovich\\grid\\advanced\\plugins\\shifty\\": "plugins/shifty"
     }
   }
