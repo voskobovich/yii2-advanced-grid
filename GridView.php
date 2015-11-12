@@ -126,7 +126,7 @@ class GridView extends SortableGridView
             $this->customButtons[] = [
                 Yii::t('backend', 'Create'),
                 ['create'],
-                ['class' => 'btn btn-default btn-flat', 'data-pjax' => false]
+                ['class' => 'btn btn-default btn-flat', 'data-pjax' => '0']
             ];
         }
 
