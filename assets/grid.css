@@ -13,3 +13,25 @@
     margin-left: .25rem;
     font-size: 1rem;
 }
+
+.grid-view .box-footer {
+    box-sizing: border-box;
+}
+
+.grid-view .box-footer div,
+.grid-view .box-footer ul {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.grid-view .box-footer .width50per {
+    width: 50%;
+}
+
+.grid-view .box-footer .pagination {
+    margin: 0;
+}
+
+.grid-view .table {
+    margin-bottom: 0;
+}

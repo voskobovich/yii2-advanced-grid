@@ -10,6 +10,7 @@ use Yii;
 use yii\grid\CheckboxColumn;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\widgets\LinkPager;
 
 
 /**
@@ -91,14 +92,15 @@ class GridView extends SortableGridView
             <div class="box-header">
                 {summary}&nbsp;&nbsp;&nbsp;{customButtons}
             </div>
-            <div class="dataTables_wrapper form-inline" role="grid">
+            <div class="form-inline" role="grid">
                 {items}
-                <div class="col-xs-6 col-md-4">
-                    {actionList}
-                </div>
-                <div class="col-xs-6 col-md-8 text-right">
-                    {pageSizeWidget}
-                    {pager}
+                <div class="box-footer">
+                    <div class="width50per text-left">
+                        {actionList}
+                    </div><div class="width50per text-right">
+                        {pageSizeWidget}
+                        {pager}
+                    </div>
                 </div>
             </div>
         </div>
@@ -126,7 +128,7 @@ class GridView extends SortableGridView
             $this->customButtons[] = [
                 Yii::t('backend', 'Create'),
                 ['create'],
-                ['class' => 'btn btn-default btn-flat', 'data-pjax' => '0']
+                ['class' => 'btn btn-default btn-xs btn-flat', 'data-pjax' => '0']
             ];
         }
 
@@ -160,14 +162,21 @@ class GridView extends SortableGridView
      */
     public function renderPager()
     {
-        $pager = parent::renderPager();
-
-        if (!empty($pager)) {
-            $pager = Html::tag('div', $pager, ['class' => 'dataTables_paginate paging_bootstrap']);
-            $pager = Html::tag('div', $pager, ['class' => 'form-group']);
+        $pagination = $this->dataProvider->getPagination();
+        if ($pagination === false || $this->dataProvider->getCount() <= 0) {
+            return '';
         }
 
-        return $pager;
+        /* @var $class LinkPager */
+        $linkPager = $this->pager;
+        $linkPager['pagination'] = $pagination;
+        $linkPager['view'] = $this->getView();
+        $linkPager['options'] = [
+            'class' => 'pagination pagination-sm'
+        ];
+
+        $class = ArrayHelper::remove($linkPager, 'class', LinkPager::className());
+        return $class::widget($linkPager);
     }
 
     /**
@@ -177,23 +186,39 @@ class GridView extends SortableGridView
     public function renderActionList()
     {
         if (is_array($this->actionList) && !empty($this->actionList)) {
-            $withDropDownList = Html::dropDownList('with', null, $this->actionList['with'],
-                ['prompt' => Yii::t('backend', $this->actionList['withLabel']), 'class' => 'form-control']);
-            $actionsDropDownList = Html::dropDownList('action', null, $this->actionList['actions'],
-                ['prompt' => Yii::t('backend', $this->actionList['actionsLabel']), 'class' => 'form-control']);
 
-            $submitButton = Html::submitButton(Yii::t('backend', $this->actionList['submitLabel']), [
-                'class' => 'btn btn-primary btn-flat',
-                'data-confirm' => Yii::t('yii', 'Are you sure?')
-            ]);
+            $withDropDownList = Html::dropDownList(
+                'with',
+                null,
+                $this->actionList['with'],
+                [
+                    'prompt' => Yii::t('backend', $this->actionList['withLabel']),
+                    'class' => 'form-control'
+                ]
+            );
 
-            $withDropDownCol = Html::tag('div', $withDropDownList, ['class' => 'form-group']);
-            $actionDropDownCol = Html::tag('div', $actionsDropDownList, ['class' => 'form-group']);
-            $submitButtonCol = Html::tag('div', $submitButton, ['class' => 'form-group']);
+            $actionsDropDownList = Html::dropDownList(
+                'action',
+                null,
+                $this->actionList['actions'],
+                [
+                    'prompt' => Yii::t('backend', $this->actionList['actionsLabel']),
+                    'class' => 'form-control'
+                ]
+            );
 
-            $contentRow = $withDropDownCol . $actionDropDownCol . $submitButtonCol;
+            $submitButton = Html::submitButton(
+                Yii::t('backend', $this->actionList['submitLabel']),
+                [
+                    'class' => 'btn btn-sm btn-default',
+                    'data-confirm' => Yii::t('yii', 'Are you sure?')
+                ]
+            );
 
-            return $contentRow;
+            $withDropDownCol = Html::tag('div', $withDropDownList, ['class' => 'input-group input-group-sm']);
+            $actionDropDownCol = Html::tag('div', $actionsDropDownList, ['class' => 'input-group input-group-sm']);
+
+            return $withDropDownCol . '&nbsp;' . $actionDropDownCol . '&nbsp;' . $submitButton;
         }
 
         return '';
@@ -206,6 +231,7 @@ class GridView extends SortableGridView
     public function renderCustomButtons()
     {
         $return = '';
+
         if (is_array($this->customButtons)) {
             foreach ($this->customButtons as $customButton) {
                 $customButtonText = !empty($customButton[0]) ? $customButton[0] : '';
@@ -229,14 +255,16 @@ class GridView extends SortableGridView
             $sizesKeys = array_keys($this->sizes);
 
             return PageSize::widget([
-                'label' => Yii::t('backend', 'Per page:'),
+                'encodeLabel' => false,
+                'label' => Yii::t('backend', 'Size:') . '&nbsp;',
                 'labelOptions' => [
-                    'style' => 'margin-right: 1rem'
+                    'class' => 'control-label',
+                    'style' => 'font-weight: normal'
                 ],
                 'template' => Html::tag('div', '{label}{list}',
-                    ['class' => 'form-group', 'style' => 'margin-top: -5px']),
+                    ['class' => 'form-group']),
                 'options' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control input-sm',
                 ],
                 'defaultPageSize' => $sizesKeys[0],
                 'sizes' => $this->sizes,
