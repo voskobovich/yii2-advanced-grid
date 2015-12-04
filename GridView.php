@@ -113,6 +113,11 @@ class GridView extends SortableGridView
     public $handlerRoute = 'grid-handler';
 
     /**
+     * @inheritdoc
+     */
+    public $dataColumnClass = 'voskobovich\grid\advanced\columns\DataColumn';
+
+    /**
      * Инициализация
      * @throws \yii\base\InvalidConfigException
      */

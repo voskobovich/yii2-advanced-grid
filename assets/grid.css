@@ -14,9 +14,32 @@
     font-size: 1rem;
 }
 
+.grid-view .table > thead > tr > th {
+    border-bottom-width: 1px;
+}
+
 .grid-view .box-header .box-title {
     display: inline-block;
     vertical-align: middle;
+}
+
+.grid-view .filters td {
+    padding: 0;
+    text-align: center;
+    background-color: #ECF0F5;
+}
+
+.grid-view .filters .control-wrapper {
+    background-color: #ffffff;
+    margin-right: 3px;
+}
+
+.grid-view .filters .control-wrapper:last-child {
+}
+
+.grid-view .filters .form-control {
+    width: 98%;
+    border: 0;
 }
 
 .grid-view .box-footer {
