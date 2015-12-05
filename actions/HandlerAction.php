@@ -33,10 +33,10 @@ class HandlerAction extends Action
      */
     public $handlers = [
         self::WITH_SELECTED => [
-            'delete' => 'voskobovich\grid\advanced\helpers\ActionHandlers::deleteSelected'
+            'delete' => ['voskobovich\grid\advanced\helpers\ActionHandlers', 'deleteSelected']
         ],
         self::WITH_ALL => [
-            'delete' => 'voskobovich\grid\advanced\helpers\ActionHandlers::deleteAll'
+            'delete' => ['voskobovich\grid\advanced\helpers\ActionHandlers', 'deleteAll']
         ]
     ];
 
