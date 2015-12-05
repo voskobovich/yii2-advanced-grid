@@ -5,6 +5,7 @@ namespace voskobovich\grid\advanced\actions;
 use Yii;
 use yii\base\Action;
 use yii\base\InvalidConfigException;
+use yii\web\BadRequestHttpException;
 
 
 /**
@@ -26,7 +27,7 @@ class HandlerAction extends Action
      * The route which will be transferred after the user action
      * @var string
      */
-    public $redirectRoute = 'index';
+    public $redirectRoute = ['index'];
 
     /**
      * @var array
@@ -54,23 +55,26 @@ class HandlerAction extends Action
 
     /**
      * @return string
+     * @throws BadRequestHttpException
      */
     public function run()
     {
         $post = Yii::$app->request->post();
 
         if (!empty($this->handlers[$post['with']][$post['action']])) {
-            $handlerName = $this->handlers[$post['with']][$post['action']];
 
             $params = [$this->modelClass];
             if ($post['with'] == self::WITH_SELECTED && !empty($post['selection'])) {
                 $params[] = $post['selection'];
             }
+
+            $handlerName = $this->handlers[$post['with']][$post['action']];
             call_user_func_array($handlerName, $params);
 
-            if ($this->redirectRoute) {
-                $this->controller->redirect([$this->redirectRoute]);
-            }
+            $this->controller->redirect($this->redirectRoute);
+            return null;
         }
+
+        throw new BadRequestHttpException();
     }
 }
