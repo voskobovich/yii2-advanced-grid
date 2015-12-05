@@ -10,8 +10,15 @@ use yii\web\AssetBundle;
  */
 class GridViewAsset extends AssetBundle
 {
+    /**
+     * @var string
+     */
     public $sourcePath = '@vendor/voskobovich/yii2-advanced-grid/assets';
+
+    /**
+     * @var array
+     */
     public $css = [
-        'grid.css'
+        'css/grid.css'
     ];
 }

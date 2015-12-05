@@ -23,22 +23,25 @@
     vertical-align: middle;
 }
 
+.grid-view .filters {
+    background: url('../images/filter_bg_pattern.png') repeat;
+}
+
 .grid-view .filters td {
     padding: 0;
     text-align: center;
-    background-color: #ECF0F5;
 }
 
 .grid-view .filters .control-wrapper {
     background-color: #ffffff;
-    margin-right: 3px;
+    margin-right: 11px;
 }
 
 .grid-view .filters .control-wrapper:last-child {
 }
 
 .grid-view .filters .form-control {
-    width: 98%;
+    width: 100%;
     border: 0;
 }
 
