@@ -62,7 +62,6 @@ class HandlerAction extends Action
         $post = Yii::$app->request->post();
 
         if (!empty($this->handlers[$post['with']][$post['action']])) {
-
             $params = [$this->modelClass];
             if ($post['with'] == self::WITH_SELECTED && !empty($post['selection'])) {
                 $params[] = $post['selection'];
