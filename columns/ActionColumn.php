@@ -21,7 +21,7 @@ class ActionColumn extends \yii\grid\ActionColumn
                 $options = array_merge([
                     'title' => Yii::t('yii', 'View'),
                     'aria-label' => Yii::t('yii', 'View'),
-                    'data-pjax' => false,
+                    'data-pjax' => '0',
                     'class' => 'btn btn-default btn-xs'
                 ], $this->buttonOptions);
                 return Html::a(Yii::t('yii', 'View'), $url, $options);
@@ -32,7 +32,7 @@ class ActionColumn extends \yii\grid\ActionColumn
                 $options = array_merge([
                     'title' => Yii::t('yii', 'Update'),
                     'aria-label' => Yii::t('yii', 'Update'),
-                    'data-pjax' => false,
+                    'data-pjax' => '0',
                     'class' => 'btn btn-primary btn-xs'
                 ], $this->buttonOptions);
                 return Html::a(Yii::t('yii', 'Update'), $url, $options);
@@ -45,7 +45,7 @@ class ActionColumn extends \yii\grid\ActionColumn
                     'aria-label' => Yii::t('yii', 'Delete'),
                     'data-confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),
                     'data-method' => 'post',
-                    'data-pjax' => false,
+                    'data-pjax' => '0',
                     'class' => 'btn btn-default btn-xs'
                 ], $this->buttonOptions);
                 return Html::a(Yii::t('yii', 'Delete'), $url, $options);
