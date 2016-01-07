@@ -56,11 +56,16 @@ class ActionHandlers
         }
 
         if (!empty($errorIds)) {
-            AlertHelper::error(Yii::t('app', 'Can not delete ids: {ids}, they are in use.', [
+            AlertHelper::error(Yii::t(
+                'vendor/voskobovich/yii2-advanced-grid/interface/common',
+                'Can not delete ids: {ids}, they are in use.', [
                 'ids' => implode(', ', $errorIds)
             ]));
         } else {
-            AlertHelper::success(Yii::t('app', 'Successfully removed!'));
+            AlertHelper::success(Yii::t(
+                'vendor/voskobovich/yii2-advanced-grid/interface/common',
+                'Successfully removed!'
+            ));
         }
     }
 }

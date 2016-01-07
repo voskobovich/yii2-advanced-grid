@@ -10,7 +10,7 @@ use yii\web\AssetBundle;
  */
 class ShiftyAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/voskobovich/yii2-advanced-grid/plugins/shifty/assets';
+    public $sourcePath = '@vendor/voskobovich/yii2-advanced-grid/src/plugins/shifty/assets';
     public $js = [
         'js/shifty.js',
     ];

@@ -131,7 +131,7 @@ class GridView extends SortableGridView
 
         if (is_array($this->customButtons) && empty($this->customButtons)) {
             $this->customButtons[] = [
-                Yii::t('backend', 'Create'),
+                Yii::t('vendor/voskobovich/yii2-advanced-grid/interface/common', 'Create'),
                 ['create'],
                 ['class' => 'btn btn-default btn-xs btn-flat', 'data-pjax' => '0']
             ];
@@ -197,7 +197,10 @@ class GridView extends SortableGridView
                 null,
                 $this->actionList['with'],
                 [
-                    'prompt' => Yii::t('backend', $this->actionList['withLabel']),
+                    'prompt' => Yii::t(
+                        'vendor/voskobovich/yii2-advanced-grid/interface/common',
+                        $this->actionList['withLabel']
+                    ),
                     'class' => 'form-control'
                 ]
             );
@@ -207,16 +210,22 @@ class GridView extends SortableGridView
                 null,
                 $this->actionList['actions'],
                 [
-                    'prompt' => Yii::t('backend', $this->actionList['actionsLabel']),
+                    'prompt' => Yii::t(
+                        'vendor/voskobovich/yii2-advanced-grid/interface/common',
+                        $this->actionList['actionsLabel']
+                    ),
                     'class' => 'form-control'
                 ]
             );
 
             $submitButton = Html::submitButton(
-                Yii::t('backend', $this->actionList['submitLabel']),
+                Yii::t(
+                    'vendor/voskobovich/yii2-advanced-grid/interface/common',
+                    $this->actionList['submitLabel']
+                ),
                 [
                     'class' => 'btn btn-sm btn-default',
-                    'data-confirm' => Yii::t('yii', 'Are you sure?')
+                    'data-confirm' => Yii::t('vendor/voskobovich/yii2-advanced-grid/interface/common', 'Are you sure?')
                 ]
             );
 
@@ -261,7 +270,7 @@ class GridView extends SortableGridView
 
             return PageSize::widget([
                 'encodeLabel' => false,
-                'label' => Yii::t('backend', 'Size:') . '&nbsp;',
+                'label' => Yii::t('vendor/voskobovich/yii2-advanced-grid/interface/common', 'Size:') . '&nbsp;',
                 'labelOptions' => [
                     'class' => 'control-label',
                     'style' => 'font-weight: normal'

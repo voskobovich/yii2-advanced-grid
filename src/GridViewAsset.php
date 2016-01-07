@@ -13,7 +13,7 @@ class GridViewAsset extends AssetBundle
     /**
      * @var string
      */
-    public $sourcePath = '@vendor/voskobovich/yii2-advanced-grid/assets';
+    public $sourcePath = '@vendor/voskobovich/yii2-advanced-grid/src/assets';
 
     /**
      * @var array
