@@ -15,7 +15,6 @@
     "issues": "https://github.com/voskobovich/yii2-advanced-grid/issues",
     "source": "https://github.com/voskobovich/yii2-advanced-grid"
   },
-  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Vitaly Voskobovich",
@@ -25,11 +24,11 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "yiisoft/yii2": "*",
-    "voskobovich/yii2-alert": "*",
-    "himiklab/yii2-sortable-grid-view-widget": "*",
-    "justinvoelker/yii2-separatedpager": "*",
-    "nterms/yii2-pagesize-widget": "*"
+    "yiisoft/yii2": "~2.0.0",
+    "voskobovich/yii2-alert": "~1.0.0",
+    "himiklab/yii2-sortable-grid-view-widget": "~1.0.7",
+    "justinvoelker/yii2-separatedpager": "~1.0.2",
+    "nterms/yii2-pagesize-widget": "~2.0.1"
   },
   "autoload": {
     "psr-4": {
