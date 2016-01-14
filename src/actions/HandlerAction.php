@@ -27,7 +27,7 @@ class HandlerAction extends Action
      * The route which will be transferred after the user action
      * @var string
      */
-    public $redirectRoute = ['index'];
+    public $redirectUrl = ['index'];
 
     /**
      * @var array
@@ -70,7 +70,7 @@ class HandlerAction extends Action
             $handlerName = $this->handlers[$post['with']][$post['action']];
             call_user_func_array($handlerName, $params);
 
-            $this->controller->redirect($this->redirectRoute);
+            $this->controller->redirect($this->redirectUrl);
             return null;
         }
 
