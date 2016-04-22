@@ -18,6 +18,7 @@ class ActionHandlers
      * Deleting only selected records from DB
      * @param $model ActiveRecord
      * @param $ids array
+     * @return $this
      */
     public static function deleteSelected($model, array $ids)
     {
@@ -26,11 +27,14 @@ class ActionHandlers
             $models = $model::findAll(['id' => $ids]);
             self::deleteModels($models);
         }
+
+        return Yii::$app->response->redirect(['index']);
     }
 
     /**
      * Deleting all records from DB
      * @param $model ActiveRecord
+     * @return $this
      * @throws \Exception
      */
     public static function deleteAll($model)
@@ -38,6 +42,8 @@ class ActionHandlers
         /** @var ActiveRecord[] $models */
         $models = $model::find()->all();
         self::deleteModels($models);
+
+        return Yii::$app->response->redirect(['index']);
     }
 
     /**

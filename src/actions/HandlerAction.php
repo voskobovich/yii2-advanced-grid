@@ -24,12 +24,6 @@ class HandlerAction extends Action
     public $modelClass;
 
     /**
-     * The route which will be transferred after the user action
-     * @var string
-     */
-    public $redirectUrl = ['index'];
-
-    /**
      * @var array
      */
     public $handlers = [
@@ -68,10 +62,7 @@ class HandlerAction extends Action
             }
 
             $handlerName = $this->handlers[$post['with']][$post['action']];
-            call_user_func_array($handlerName, $params);
-
-            $this->controller->redirect($this->redirectUrl);
-            return null;
+            return call_user_func_array($handlerName, $params);
         }
 
         throw new BadRequestHttpException();
