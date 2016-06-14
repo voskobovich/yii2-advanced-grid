@@ -192,30 +192,41 @@ class GridView extends SortableGridView
     {
         if (is_array($this->actionList) && !empty($this->actionList)) {
 
+            $withOptions = [
+                'class' => 'form-control'
+            ];
+
+            if (!empty($this->actionList['withLabel'])) {
+                $withOptions['prompt'] = Yii::t(
+                    'vendor/voskobovich/yii2-advanced-grid/interface/common',
+                    $this->actionList['withLabel']
+                );
+            }
+            
             $withDropDownList = Html::dropDownList(
                 'with',
                 null,
                 $this->actionList['with'],
-                [
-                    'prompt' => Yii::t(
-                        'vendor/voskobovich/yii2-advanced-grid/interface/common',
-                        $this->actionList['withLabel']
-                    ),
-                    'class' => 'form-control'
-                ]
+                $withOptions
             );
+
+
+            $actionsOptions = [
+                'class' => 'form-control'
+            ];
+
+            if (!empty($this->actionList['actionsLabel'])) {
+                $actionsOptions['prompt'] = Yii::t(
+                    'vendor/voskobovich/yii2-advanced-grid/interface/common',
+                    $this->actionList['actionsLabel']
+                );
+            }
 
             $actionsDropDownList = Html::dropDownList(
                 'action',
                 null,
                 $this->actionList['actions'],
-                [
-                    'prompt' => Yii::t(
-                        'vendor/voskobovich/yii2-advanced-grid/interface/common',
-                        $this->actionList['actionsLabel']
-                    ),
-                    'class' => 'form-control'
-                ]
+                $actionsOptions
             );
 
             $submitButton = Html::submitButton(
